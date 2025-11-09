@@ -36,6 +36,10 @@ cd App && npm install && npm run build:native && npm run build && npm start
 
 This installs dependencies, compiles the native audio module, bundles the Electron app, and launches the UI in a single chained command.
 
+## UI Preview
+
+![Synth UI running](docs/images/synthy.jpg)
+
 ### Development Workflow
 
 - `npm run dev` – start the renderer bundler in watch mode and relaunch Electron on rebuild.
