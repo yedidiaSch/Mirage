@@ -26,6 +26,16 @@ npm run build          # bundles main + renderer processes
 npm start              # launches Electron
 ```
 
+### Quick Start (one-liner)
+
+If you already have dependencies installed, you can run everything in one go:
+
+```bash
+cd App && npm install && npm run build:native && npm run build && npm start
+```
+
+This installs dependencies, compiles the native audio module, bundles the Electron app, and launches the UI in a single chained command.
+
 ### Development Workflow
 
 - `npm run dev` – start the renderer bundler in watch mode and relaunch Electron on rebuild.
