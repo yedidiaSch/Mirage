@@ -1,11 +1,11 @@
 # SynthUI Workspace
 
-SynthUI pairs an Electron/React front end with a native C++ audio engine to deliver a vintage-inspired synthesizer desktop app. This workspace contains both the desktop shell (`App/`) and the standalone audio engine project (`audioSystem/`).
+SynthUI pairs an Electron/React front end with a native C++ audio engine to deliver a vintage-inspired synthesizer desktop app. The project lives in a single repository and is designed to build and run through the Electron shell—there is no separate, supported standalone build of the C++ engine.
 
 ## Repository Layout
 
 - `App/` – Electron + React application, including the N-API bridge that loads the native audio module and the full UI.
-- `audioSystem/` – C++ sources, effects, and utilities that implement the realtime synthesis engine. This project also builds CLI demos and tooling.
+- `audioSystem/` – C++ sources, effects, and utilities compiled into the native module consumed by the renderer.
 - `.github/` – Copilot configuration and project-specific contributor guidance.
 
 ## Prerequisites
@@ -26,18 +26,13 @@ npm run build          # bundles main + renderer processes
 npm start              # launches Electron
 ```
 
-For rapid UI iteration you can run `npm run dev`, which starts the renderer bundler in watch mode and relaunches Electron on rebuild.
+### Development Workflow
 
-## Using the C++ Audio Engine Directly
-
-From `audioSystem/` you can build and run the standalone applications:
-
-```bash
-./build.sh           # configure & build with CMake (outputs to audioSystem/build/)
-./build/bin/audioApp # example headless synth runner
-```
-
-Additional demos live under `audioSystem/guiBase_cpp/` and `audioSystem/utilities/`.
+- `npm run dev` – start the renderer bundler in watch mode and relaunch Electron on rebuild.
+- `npm run build:renderer` – rebuild the React bundle without touching the native layer.
+- `npm run build:main` – rebuild the Electron main process bundle.
+- `npm run build:native` – recompile the audio engine when C++ sources change (copies `audioSystemNative.node` into `App/dist/`).
+- `npm start` – launch the packaged Electron app from `App/dist/` once bundles are up to date.
 
 ## MIDI & Hardware Controls
 
@@ -45,7 +40,7 @@ When a hardware MIDI controller is connected the native layer routes events thro
 
 ## Licensing
 
-The native engine ships with its own license inside `audioSystem/LICENSE`. If you intend to publish the combined application, ensure that license terms are compatible with your distribution.
+The entire project is released under the MIT License. See the [LICENSE](./LICENSE) file for details.
 
 ## Contributing
 
