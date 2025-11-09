@@ -1,0 +1,72 @@
+.knob {
+  position: relative;
+  width: 90px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  color: #f0e7d3;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 0.7rem;
+}
+
+.knob__dial {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #3a3a3a, #0f0f0f 65%, #000000);
+  border: 2px solid #1b1b1b;
+  box-shadow: inset 0 6px 10px rgba(0, 0, 0, 0.6), inset 0 -4px 6px rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.knob__dial-inner {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 60% 60%, #202020, #111111 55%, #050505);
+  box-shadow: inset 0 4px 6px rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.12s ease;
+}
+
+.knob__pointer {
+  display: block;
+  width: 4px;
+  height: 26px;
+  border-radius: 2px;
+  background: linear-gradient(180deg, #f4d9a0 0%, #d0802a 40%, #a65b1e 100%);
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
+  transform: translateY(-10px);
+}
+
+.knob__input {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.knob__label {
+  font-weight: 700;
+  color: #f6b45a;
+}
+
+.knob__value {
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: #f0e7d3;
+}
+
+.knob--disabled {
+  opacity: 0.6;
+}
+
+.knob--disabled .knob__pointer {
+  background: linear-gradient(180deg, #c9b89a 0%, #a97d45 40%, #7f5c2c 100%);
+}

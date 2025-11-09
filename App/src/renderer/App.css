@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Space+Grotesk:wght@400;500;600&display=swap');
+
+:root {
+  color-scheme: dark;
+  --font-sans: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-display: 'Cormorant Garamond', 'Times New Roman', serif;
+  --bg-core: #0f0b09;
+  --bg-ambient: radial-gradient(circle at top, rgba(34, 21, 15, 0.85), rgba(9, 6, 4, 0.95));
+  --bg-panel: linear-gradient(160deg, rgba(44, 28, 20, 0.94), rgba(18, 11, 8, 0.98));
+  --bg-panel-accent: linear-gradient(150deg, rgba(71, 45, 24, 0.92), rgba(28, 16, 9, 0.92));
+  --bg-panel-meter: linear-gradient(170deg, rgba(23, 32, 30, 0.9), rgba(11, 17, 16, 0.96));
+  --color-text-primary: #f7e5c2;
+  --color-text-muted: rgba(247, 229, 194, 0.62);
+  --color-text-invert: #140f0b;
+  --accent-copper: #b77432;
+  --accent-amber: #f7d47b;
+  --accent-mint: #7fe0c9;
+  --accent-ember: #421f11;
+  --border-soft: rgba(214, 167, 102, 0.35);
+  --border-glow: rgba(255, 220, 141, 0.55);
+  --shadow-soft: 0 18px 42px rgba(0, 0, 0, 0.45);
+  --shadow-rim: inset 0 0 0 1px rgba(0, 0, 0, 0.42);
+  --shadow-lift: 0 24px 40px rgba(0, 0, 0, 0.55);
+  --panel-radius: 18px;
+  --panel-padding: 1.5rem;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: var(--bg-ambient);
+  background-color: var(--bg-core);
+  color: var(--color-text-primary);
+  min-height: 100vh;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: radial-gradient(circle at 20% -10%, rgba(72, 46, 26, 0.28), transparent 55%),
+    radial-gradient(circle at 80% 0%, rgba(28, 52, 44, 0.22), transparent 58%),
+    var(--bg-ambient);
+}
+
+.app-header {
+  background: rgba(7, 5, 4, 0.65);
+  padding: 1.2rem 2rem;
+  border-bottom: 1px solid rgba(255, 213, 143, 0.12);
+  backdrop-filter: blur(12px);
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: 1.35rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent-amber);
+}
+
+.app-main {
+  flex: 1;
+  overflow: auto;
+  padding: 2rem;
+}

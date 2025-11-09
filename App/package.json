@@ -1,0 +1,51 @@
+{
+  "name": "synthui-desktop",
+  "version": "1.0.0",
+  "description": "Desktop synthesizer application using Electron, React, and C++ audio engine",
+  "main": "dist/main.js",
+  "scripts": {
+    "build:native": "node-gyp rebuild",
+    "build:renderer": "webpack --config webpack.renderer.config.js",
+    "build:main": "webpack --config webpack.main.config.js",
+    "postbuild:native": "mkdir -p dist && cp build/Release/audioSystemNative.node dist/",
+    "build": "npm run build:native && npm run build:main && npm run build:renderer",
+    "watch:renderer": "webpack --watch --config webpack.renderer.config.js",
+    "watch:main": "webpack --watch --config webpack.main.config.js",
+    "start": "electron . --no-sandbox",
+    "dev": "concurrently \"npm run watch:main\" \"npm run watch:renderer\" \"wait-on dist/main.js && electron . --no-sandbox\"",
+    "clean": "rm -rf dist build"
+  },
+  "keywords": [
+    "synthesizer",
+    "audio",
+    "electron",
+    "react"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "@typescript-eslint/eslint-plugin": "^6.13.0",
+    "@typescript-eslint/parser": "^6.13.0",
+    "concurrently": "^8.2.0",
+    "css-loader": "^6.8.0",
+    "electron": "^27.0.0",
+    "eslint": "^8.54.0",
+    "eslint-plugin-react": "^7.33.0",
+    "html-webpack-plugin": "^5.5.0",
+    "node-addon-api": "^7.0.0",
+    "node-gyp": "^10.0.0",
+    "style-loader": "^3.3.0",
+    "ts-loader": "^9.5.0",
+    "typescript": "^5.3.0",
+    "wait-on": "^7.2.0",
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.0"
+  }
+}

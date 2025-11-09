@@ -1,0 +1,74 @@
+# Dependency directories
+node_modules/
+
+# Environment files
+.env
+.env.*
+
+# Logs and diagnostics
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Editor and OS metadata
+.vscode/
+.idea/
+*.iml
+*.swp
+*~
+.DS_Store
+Thumbs.db
+
+# Build outputs (general)
+dist/
+out/
+release/
+*.asar
+
+# Electron / webpack artifacts
+.AppImage*
+*.dmg
+*.exe
+*.app
+*.msi
+*.nupkg
+
+# Generated coverage & testing artifacts
+coverage/
+.jest/
+.nyc_output/
+
+# TypeScript build cache
+*.tsbuildinfo
+
+# Native build directories and binaries
+**/build/
+**/bin/
+**/CMakeFiles/
+**/CMakeCache.txt
+**/cmake_install.cmake
+**/compile_commands.json
+
+# Object files & libraries
+*.o
+*.obj
+*.lo
+*.la
+*.a
+*.lib
+*.dll
+*.so
+*.dylib
+*.pdb
+*.exp
+
+# Generated audio engine module
+App/dist/audioSystemNative.node
+App/build/Release/
+
+# Python cache (if utility scripts are added)
+__pycache__/
+*.py[cod]

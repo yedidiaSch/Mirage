@@ -1,0 +1,37 @@
+.drift-panel {
+  background: linear-gradient(150deg, rgba(63, 41, 26, 0.88), rgba(27, 17, 11, 0.92));
+  border-radius: 16px;
+  padding: 1.25rem 1.5rem;
+  border: 1px solid rgba(255, 212, 141, 0.32);
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.42), 0 16px 28px rgba(0, 0, 0, 0.48);
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.drift-panel__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.drift-panel__title {
+  font-size: 1.08rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--accent-amber);
+}
+
+.drift-panel__subtitle {
+  font-size: 0.68rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: rgba(247, 229, 194, 0.6);
+}
+
+.drift-panel__knobs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(108px, 1fr));
+  gap: 1.1rem;
+  justify-items: center;
+}

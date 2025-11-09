@@ -1,0 +1,50 @@
+.panel-shell {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding: var(--panel-padding);
+  background: var(--bg-panel);
+  border-radius: var(--panel-radius);
+  border: 1px solid var(--border-soft);
+  box-shadow: var(--shadow-rim), var(--shadow-soft);
+  backdrop-filter: blur(8px);
+  transition: transform 0.16s ease, box-shadow 0.16s ease;
+}
+
+.panel-shell:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-rim), var(--shadow-lift);
+}
+
+.panel-shell--accent {
+  background: var(--bg-panel-accent);
+  border-color: rgba(255, 209, 138, 0.42);
+}
+
+.panel-shell--meter {
+  background: var(--bg-panel-meter);
+  border-color: rgba(144, 224, 204, 0.32);
+  box-shadow: inset 0 0 0 1px rgba(127, 224, 201, 0.2), var(--shadow-soft);
+}
+
+.panel-shell--flush {
+  padding: 0;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  backdrop-filter: none;
+}
+
+.panel-shell__title {
+  font-size: 0.9rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.panel-shell__title strong {
+  font-family: var(--font-display);
+  letter-spacing: 0.18em;
+  color: var(--accent-amber);
+}

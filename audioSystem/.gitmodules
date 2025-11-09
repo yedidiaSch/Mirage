@@ -1,0 +1,6 @@
+[submodule "utilities"]
+	path = utilities
+	url = https://github.com/yedidiaSch/utilities.git
+[submodule "guiBase_cpp"]
+	path = guiBase_cpp
+	url = https://github.com/yedidiaSch/guiBase_cpp

@@ -1,0 +1,49 @@
+# Compiled Object files
+*.gch
+*.o
+*.obj
+*.bin
+*.so
+*.out
+*.elf
+
+# Executables
+*.exe
+*.app
+audioApp
+
+# Build directories
+/build/
+/temp/
+/debug/
+/release/
+
+# IDE files
+.vscode/
+.vs/
+*.vcxproj*
+*.sln
+
+# ImGui files
+imgui.ini
+
+# Log files
+*.log
+
+# OS specific files
+.DS_Store
+Thumbs.db
+
+# CMake
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+
+# Dependencies
+/deps/
+/lib/
+/third-party/
+
+# Test outputs
+/test-results/
